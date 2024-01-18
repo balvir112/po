@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+ 
+ :root {
+
+     /* ---------------------colors------------------- */
+     /* color mode HSL(hue saturation lightness) */
+  --first-color: hsl(353, 100%, 65%);
+  --title-color: hsl(249, 41%, 3%);
+   --text-color: hsl(244, 16%, 43%);
+   --body-color: rgba(223, 211, 211, 0);
+   --container-color: #fff;
+
+   /* font and typography */
+     /* .5rem = 8px | 1rem = 16px */
+
+    --body-font: 'Rubik', sans-serif;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;    
+
+
+    /* font weight  */
+
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+
+    /* box shadow  */
+
+    --shadow: 0 5px 20px 0px  rgba(69, 67, 96, 10%);
+
+  /* border radius  */
+   --border-radius: 20px;  /*.5rem*/
+
+}
+
+
+ /*    Responsive Typography    */
+@media screen and (min-width: 1024px) {
+    :root {
+      --h1-font-size: 1.75rem;
+      --h2-font-size: 1.25rem;
+      --h3-font-size: 1rem;
+      --normal-font-size: .938rem;
+      --small-font-size: .813rem;
+      --smaller-font-size: .75rem;
+    }
+  }
+
+
+
+
+       /* ---------------------Base------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html {
+  scroll-behavior: smooth;
+
+}   
+
+body,
+input,
+textarea{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body{
+    background-color: var(--body-color);
+    color: var(--text-color);
+    line-height: 1.7;
+     /* overflow: scroll; */
+}
+
+h1,h2,h3{
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+    line-height: 1.2;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+
+     /* ---------------------Reusable CSS Classes------------------- */
+
+     .container{
+            max-width: 1080px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+     }
+
+     .grid{
+         display: grid;
+         gap: 1.5rem;
+     }  
+
+     .section{
+         padding-top: 7rem;
+         padding-bottom: 2rem;
+     }
+
+     .section__title{
+         font-size: var(--h1-font-size);
+         margin-bottom: 3.7rem;
+         margin-left: 0.875rem;
+         position: relative;
+         font-weight: var(--font-bold);
+     }
+
+     .section__title::before{
+         content: "";
+         position: absolute;
+         /* background: url(./assets/dots-bg.svg); */
+         height: 2.25rem;
+         width: 2.25rem;
+         top: -0.875rem;
+         left: -0.875rem;
+         /* background-color: var(--first-color); */
+         
+     }
+
+     .btn{
+         display: inline-block;
+         background-color: rgb(111, 184, 184);
+         box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+         font-weight: var(--font-bold);
+         color: #fff;
+         padding: 0.75rem 2rem;
+         border: 1px solid transparent
+        line-height  1;
+        border-radius : 1.875rem;
+        /* width: 25; */
+     }
+
+     @keyframes button-push{
+        
+         50%{
+             transform: scale(0.8);
+         }
+         100%{
+             transform: scale(1);
+         }
+        
+     }
+
+        .btn:hover{
+            animation: button-push 0.5s  linear 1;
+        }
